@@ -55,7 +55,7 @@ Every animal that reaches or sustains **Loving** state contributes to your overa
 
 ## Privacy
 
-Sprouts collects no data. No accounts, no tracking, nothing. It is designed to be completely safe for children.
+P&P collects no data. No accounts, no tracking, nothing. It is designed to be completely safe for children.
 
 > *If multiplayer is ever added in the future, account creation will require only a valid email address — no other personal information.*
 
