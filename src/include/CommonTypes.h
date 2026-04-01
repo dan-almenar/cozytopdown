@@ -10,11 +10,11 @@
 namespace sprouts {
 	// FLAGS
 	enum DIRECTION {
-		IDLE,
-		UP,
 		DOWN,
+		UP,
 		LEFT,
-		RIGHT
+		RIGHT,
+		IDLE,
 	};
 	enum ANIMAL_STATE {
 		SICK,
@@ -27,11 +27,7 @@ namespace sprouts {
 		FRUIT
 	};
 	// Characters
-	class Character {
-		public:
-			virtual ~Character() = default;
-			virtual void Move(DIRECTION, float) = 0;
-	};	// Configuration objects
+	// Configuration objects
 	// structs
 	struct Prop {};
 	struct Audio {
@@ -48,20 +44,5 @@ namespace sprouts {
 	// Config types 
 	struct Config { public: std::string id = ""; };
 	struct GameConfig : public Config {};
-	struct CharacterConfig : public Config {
-		CharacterConfig(){ id = "character"; };
-		std::optional<Texture2D> texture;
-		std::optional<Color> tint;
-		std::optional<unsigned char> stamina;
-		std::optional<unsigned char> heartsStock;
-		std::optional<unsigned char> fruitStock;
-	};
-	struct SceneConfig : public Config {
-		SceneConfig(){ id = "scene"; };
-		std::vector<Character*> actors;
-		std::vector<Prop*> props;
-		std::optional<Audio> music;
-	};
-	
 }
 #endif

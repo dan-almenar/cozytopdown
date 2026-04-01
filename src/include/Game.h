@@ -6,6 +6,7 @@
 #include <string>
 #include <memory>
 
+#include "Animal.h"
 #include "CommonTypes.h"
 #include "Scene.h"
 
@@ -13,12 +14,12 @@ namespace sprouts {
 	class Game {
 		public:
 			// Constructors
-			Game(int w, int h, std::string ttl, GameConfig cfg={});
+			Game(int w, int h, std::string ttl, const GameConfig& cfg={});
 			void SetScene(std::string);
 			void Update(float dt);
 			void Render();
-			Character* GetCharacterAt(Vector2 pos);
-			void SetTarget(Character* c); // derives to Player::LockTarget();
+			Animal* GetCharacterAt(Vector2 pos);
+			void SetTarget(Animal* t); // derives to Player::LockTarget();
 			void HandleInput();
 		private:
 			Scene* _currentScene;

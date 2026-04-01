@@ -1,4 +1,3 @@
-// TODO (NON CRITICAL) -> Change currentTarget and related methods to Animal
 #ifndef PLAYER_H
 #define PLAYER_H
 
@@ -12,13 +11,13 @@
 #include "./Animal.h"
 
 namespace sprouts {
-	class Player : public Character {
+	class Player {
 		public:
 			Player(Vector2 pos, float vel, const CharacterConfig& cfg={});
 			~Player();
-			void Move(DIRECTION, float) override;
-			//Character* LockTarget(Character*);
-			void LockTarget(Character*);
+			void Move(DIRECTION, float);
+			void Render(float);
+			void LockTarget(Animal*);
 			void HealAnimal();
 			void PetAnimal();
 			void Eat();
@@ -35,7 +34,7 @@ namespace sprouts {
 			unsigned char _stamina;
 			unsigned char _heartsStock;
 			unsigned char _fruitStock;
-			Character* _currentTarget = nullptr;
+			Animal* _currentTarget = nullptr;
 			void cleanup();
 	};
 }
